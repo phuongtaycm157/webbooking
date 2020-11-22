@@ -7,7 +7,7 @@ var con = require('../DB');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   id = req.signedCookies.userid;
-  res.render('host/index', {id: id});
+  res.render('host/index', {userid: id});
 });
 
 

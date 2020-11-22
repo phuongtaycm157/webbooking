@@ -1,2 +1,74 @@
-h1 this is host page
-p id #{id}
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+  meta(name='generator', content='Jekyll v4.1.1')
+  title Product example &middot; Bootstrap
+  link(rel='canonical', href='https://getbootstrap.com/docs/4.5/examples/product/')
+  // Bootstrap core CSS
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css')
+  style.
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    }
+  // Custom styles for this template
+  link(href='/static/stylesheets/product.css', rel='stylesheet')
+nav.site-header.sticky-top.py-1
+  .container.d-flex.flex-column.flex-md-row.justify-content-between
+    a.py-2(href='#', aria-label='Product')
+      svg.d-block.mx-auto(xmlns='http://www.w3.org/2000/svg', width='24', height='24', fill='none', stroke='currentColor', stroke-linecap='round', stroke-linejoin='round', stroke-width='2', role='img', viewbox='0 0 24 24', focusable='false')
+        title Product
+        circle(cx='12', cy='12', r='10')
+        path(d='M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94')
+    a.py-2.d-none.d-md-inline-block.active(href='#') Kh&aacute;ch s&#x1EA1;n
+    a.py-2.d-none.d-md-inline-block(href='#') Ph&ograve;ng
+    a.py-2.d-none.d-md-inline-block(href='#') Gi&aacute; &amp; ti&#x1EC7;n &iacute;ch
+    a.py-2.d-none.d-md-inline-block(href='#') Khuy&#x1EBF;n m&#x1EA1;i
+    a.py-2.d-none.d-md-inline-block(href='#') Th&#x1ED1;ng k&ecirc;
+.container
+  .row.d-flex.justify-content-center
+    form.col-md-8.card.card-body.mt-5
+      h1.display-4.text-center.mb-4 Th&ocirc;ng tin kh&aacute;ch s&#x1EA1;n
+      .form-group
+        label(for='exampleInputEmail1') T&ecirc;n kh&aacute;ch s&#x1EA1;n
+        input#exampleInputEmail1.form-control(type='text', aria-describedby='emailHelp')
+        small#emailHelp.form-text.text-muted K&yacute; t&#x1EF1; ti&#x1EBF;ng Anh
+      .form-group
+        label(for='exampleInputPassword1') Qu&#x1ED1;c gia
+        select.form-control
+          option Vi&#x1EC7;t Nam
+          //
+            <option>Anh</option>
+            <option>Pháp</option>
+            <option>Mỹ</option>
+            <option>Nga</option>
+      .form-group
+        label(for='exampleInputPassword1') Bang/T&#x1EC9;nh
+        select.form-control
+          option C&agrave; Mau
+          option B&#x1EA1;c Li&ecirc;u
+          option Ki&ecirc;n Giang
+          option C&#x1EA7;n Th&#x1A1;
+          option TP_HCM
+      .form-group
+        label(for='exampleInputEmail1') Th&agrave;nh Ph&#x1ED1;
+        input#exampleInputEmail1.form-control(type='text', aria-describedby='emailHelp')
+      .form-group
+        label(for='exampleInputEmail1') &Dstrok;&#x1ECB;a ch&#x1EC9;
+        input#exampleInputEmail1.form-control(type='text', aria-describedby='emailHelp')
+      .form-group
+        label(for='exampleInputEmail1') S&#x1ED1; &dstrok;i&#x1EC7;n tho&#x1EA1;i
+        input#exampleInputEmail1.form-control(type='text', aria-describedby='emailHelp')
+      button.btn.btn-primary(type='submit') G&#x1EED;i
