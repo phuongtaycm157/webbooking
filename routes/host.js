@@ -10,5 +10,14 @@ router.get('/', function(req, res, next) {
   res.render('host/index', {userid: id});
 });
 
+router.get('/room', function(req, res, next) {
+	userid = req.signedCookies.userid;
+	var sql = "SELECT hotels.hotel_id as hotel_id, hotels.hotel_country as hotel_country, hotels.hotel_province";
+	con.query(sql, [userid], function(err, result, flieds) {
+		if (err) throw err;
+		res.send(result);
+	})
+	// res.render('host/room',);
+})
 
 module.exports = router;
