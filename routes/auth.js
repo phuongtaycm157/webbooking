@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
 			if (err) throw err;
 			if (result.length === 1) {
 				var id = result[0].id;
-				res.cookie('userid', id.toString(), {expires: new Date(Date.now() + 900000), signed: true});
+				res.cookie('userid', id.toString(), {expires: new Date(Date.now() + 3600000), signed: true});
 				res.redirect('/host');
 			} else {
 				res.redirect('/auth/login');
