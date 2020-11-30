@@ -1,0 +1,152 @@
+extends ../layout/host.layout.pug
+block content
+  nav.site-header.sticky-top.py-1
+    .container.d-flex.flex-column.flex-md-row.justify-content-between
+      a.py-2(href='#', aria-label='Product')
+        svg.d-block.mx-auto(xmlns='http://www.w3.org/2000/svg', width='24', height='24', fill='none', stroke='currentColor', stroke-linecap='round', stroke-linejoin='round', stroke-width='2', role='img', viewbox='0 0 24 24', focusable='false')
+          title Product
+          circle(cx='12', cy='12', r='10')
+          path(d='M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94')
+      a.py-2.d-none.d-md-inline-block(href='/host') Kh&aacute;ch s&#x1EA1;n
+      a.py-2.d-none.d-md-inline-block.active(href='/host/room') Ph&ograve;ng
+      a.py-2.d-none.d-md-inline-block(href='#') Gi&aacute; &amp; ti&#x1EC7;n &iacute;ch
+      a.py-2.d-none.d-md-inline-block(href='#') Khuy&#x1EBF;n m&#x1EA1;i
+      a.py-2.d-none.d-md-inline-block(href='#') Th&#x1ED1;ng k&ecirc;
+  
+  style.
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .active {
+    color: white !important;
+    }
+    .selection {
+    color: black;
+    padding: 10px 10px;
+    }
+    .selection:hover {
+    color: black;
+    text-decoration: none;
+    background-color: #eee;
+    }
+    .sl-active {
+    background-color: #eee;
+    color: #1174a6;
+    border-right: 2px solid #1174a6;
+    }
+    .lh-active,.loaihinh:hover {
+    background-color: #c3e7d9;
+    box-shadow: 0 0 4px #898989;
+    border: none !important;
+    transition: .3s;
+    cursor: pointer;
+    }
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    }
+
+
+
+  .container-fluid.shadow-sm
+  .container
+    .room-item
+      .p-3.d-flex.align-items-center
+        .image.mr-2(style='width: 60px; height: 60px')
+          img.rounded(src='http://localhost:3000/static/images/hotel-1.jpg', style='width: 100%;height: 100%')
+        div
+          h5 [18507135] #{room.room_tenphong}
+          div
+            a.badge.badge-success.mr-2(href='#') &Dstrok;ang ho&#x1EA1;t &dstrok;&#x1ED9;ng
+            small #{hotel.hotel_province}, #{hotel.hotel_country}
+      .w-100.border-bottom
+      .px-2.d-flex
+        .px-3.py-2.border-right(style='font-weight: 600; color: #1174a6; border-bottom:3px solid #1174a6; ') S&#x1EED;a ch&#x1ED7; &#x1EDF;
+        a.px-3.py-2(href='#') L&#x1ECB;ch
+
+  .container.mt-4
+    .row
+      .col-md-3
+        .card.card-body.px-0
+          h5.text-center.mb-3 Chi ti&#x1EBF;t ch&#x1ED5; ngh&#x1EC9;
+          .w-100.border-bottom
+          a.d-block.selection.sl-active(href='#') Th&ocirc;ng tin c&#x1A1; b&#x1EA3;n
+          a.d-block.selection(href='#') Ti&#x1EC7;n nghi
+          a.d-block.selection(href='#') &#x1EA2;nh
+      .col-md-9
+        .mb-4
+          h5.mb-3 C&#x1A1; s&#x1EDF; kinh doanh
+          .card.card-body
+            .mb-3(style='font-size: 14px; font-weight: 500') Lo&#x1EA1;i h&igrave;nh
+            .d-flex.mb-3
+              .loaihinh.text-center.mr-2.py-3.border.lh-active(data-state=room.room_loai[0][1], data-stt='0', style='height: 90px; width: 130px;')
+                img(src='http://localhost:3000/static/images/apartment.svg', style='width: 36px;', alt='')
+                br
+                span To&agrave;n b&#x1ED9; c&abreve;n h&#x1ED9;
+              .loaihinh.text-center.mr-2.py-3.border(data-state=room.room_loai[1][1], data-stt='1', style='height: 90px; width: 130px;')
+                img(src='http://localhost:3000/static/images/apartment.svg', style='width: 36px;', alt='')
+                br
+                span To&agrave;n b&#x1ED9; nh&agrave; tr&#x1EC7;t
+              .loaihinh.text-center.mr-2.py-3.border(data-state=room.room_loai[2][1], data-stt='2', style='height: 90px; width: 130px;')
+                img(src='http://localhost:3000/static/images/apartment.svg', style='width: 36px;', alt='')
+                br
+                span To&agrave;n b&#x1ED9; nh&agrave; ri&ecirc;ng
+              .loaihinh.text-center.mr-2.py-3.border(data-state=room.room_loai[3][1], data-stt='3', style='height: 90px; width: 130px;')
+                img(src='http://localhost:3000/static/images/apartment.svg', style='width: 36px;', alt='')
+                br
+                span Bi&#x1EC7;t th&#x1EF1;
+            .mb-3(style='font-size: 14px; font-weight: 500') Quy m&ocirc; ch&#x1ED5; ngh&#x1EC9;
+            .d-flex.align-items-center
+              input#quymo.form-control.mr-2(type='text', style='width: 100px', value='20')
+              small m&eacute;t vu&ocirc;ng
+        .mb-4
+          h5.mb-3 Chi ti&#x1EBF;t ph&ograve;ng &#x1EDF;
+          .card.card-body
+            .mb-1(style='font-size: 14px; font-weight: 500') S&#x1EE9;c ch&#x1EE9;a
+            small.mb-2
+              | S&#x1ED1; l&#x1B0;&#x1EE3;ng ng&#x1B0;&#x1EDD;i t&#x1ED1;i &dstrok;a c&oacute; th&#x1EC3; ng&#x1EE7; tho&#x1EA3;i m&aacute;i theo s&#x1ED1; l&#x1B0;&#x1EE3;ng gi&#x1B0;&#x1EDD;ng v&agrave; sofa cung c&#x1EA5;p.
+            .d-flex.justify-content-between.align-items-center.mb-3.border
+              button#scMinus.p-2.border-0
+                svg.bi.bi-dash(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z')
+              input#succhua.text-center.form-control.border-0(type='text', value='2', style='width: 100px;')
+              button#scPlus.p-2.border-0
+                svg.bi.bi-plus(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z')
+            .mb-1(style='font-size: 14px; font-weight: 500') Ph&ograve;ng t&#x1EAF;m
+            small.mb-2
+              | Ch&#x1EC9; &dstrok;&#x1EBF;m s&#x1ED1; l&#x1B0;&#x1EE3;ng ph&ograve;ng t&#x1EAF;m trong n&#x1A1;i &#x1EDF; c&#x1EE7;a b&#x1EA1;n, kh&ocirc;ng ph&#x1EA3;i ph&ograve;ng t&#x1EAF;m chung trong to&agrave; nh&agrave; ho&#x1EB7;c chung c&#x1B0;.
+            .d-flex.justify-content-between.align-items-center.mb-3.border
+              button#ptMinus.p-2.border-0
+                svg.bi.bi-dash(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z')
+              input#phongtam.text-center.form-control.border-0(type='text', value='2', style='width: 100px;')
+              button#ptPlus.p-2.border-0
+                svg.bi.bi-plus(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z')
+            .mb-1(style='font-size: 14px; font-weight: 500') Gi&#x1B0;&#x1EDD;ng ng&#x1EE7;
+            small.mb-2 S&#x1ED1; Gi&#x1B0;&#x1EDD;ng t&#x1ED1;i c&oacute; trong ch&#x1ED5; ngh&#x1EC9;
+            .d-flex.justify-content-between.align-items-center.mb-3.border
+              button#gMinus.p-2.border-0
+                svg.bi.bi-dash(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z')
+              input#giuong.text-center.form-control.border-0(type='text', value='2', style='width: 100px;')
+              button#gPlus.p-2.border-0
+                svg.bi.bi-plus(width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd', d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z')
+        .mb-5.d-flex.justify-content-end
+          button.btn.btn-lg.btn-outline-primary(type='button', style='width: 200px') H&#x1EE7;y
+          .mr-2
+          button#luu.btn.btn-lg.btn-primary(type='button', style='width: 200px') L&#x1B0;u
+
+  script(src='/static/scripts/baseinfo.js', type='text/javascript')
+
+
+
+
