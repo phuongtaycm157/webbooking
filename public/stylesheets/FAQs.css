@@ -1,0 +1,15 @@
+
+.banner {
+	background-image: url(https://remap.travelerwp.com/wp-content/uploads/2015/02/new-jersey-insurance-quotes.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 81px 0;
+}
+.banner h1 {
+	color: white;
+}
+.sub {
+	font-size: 13px;
+	font-weight: 400;
+	color: #1A2B48;
+}

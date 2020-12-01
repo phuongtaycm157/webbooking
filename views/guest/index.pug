@@ -1,0 +1,344 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel='shortcut icon', type='image/svg', href='images/booking.svg')
+  title Booking
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='static/stylesheets/style1.css')
+// Navigation
+nav.navbar.navbar-expand-lg.navbar-light.bg-white
+  // <div class="container-fluid">
+  a.navbar-brand.px-4(href='#')
+    img(src='https://remap.wpengine.com/wp-content/uploads/2018/11/renmap_logo.svg', alt='Logo')
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link.p-4(href='#')
+          | HOME 
+          span.sr-only (current)
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.p-4.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | LISTING
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          a.dropdown-item.border-bottom(href='#') Full Map Layout
+          a.dropdown-item.border-bottom(href='#') Half Map Layout
+          a.dropdown-item(href='#') Sidebar Layout
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.p-4.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | PROPERTIES
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          a.dropdown-item.border-bottom(href='#') Single Style 1
+          a.dropdown-item(href='#') Single Style 2
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.p-4.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | PAGES
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          a.dropdown-item.border-bottom(href='#') About Us
+          a.dropdown-item.border-bottom(href='#') Blog
+          a.dropdown-item.border-bottom(href='#') Become a Host
+          a.dropdown-item.border-bottom(href='#') FAQs
+          a.dropdown-item(href='#') 404 Page
+      li.nav-item
+        a.nav-link.p-4(href='#') CONTACT
+    form.form-inline.my-2.my-lg-0
+      a.log__.in.px-2.border-right.border-secondary(href='#') Login
+      a.log__.out.px-2(href='#') Sign Up
+      a.px-4(href='#')
+        img(src='images/shopping-bag.svg', alt='cart', width='26px')
+      button.btn.btn-orange.mx-2.my-2.my-sm-0.px-4.py-2(type='submit') Become a Host
+  // </div>
+// End Navigation
+// Search Page
+.search-result-page
+  .container.search-result-page-content
+    .srp-header.text-center Find your next rental
+    form
+      .from-search
+        .fc-item.border-radius-left
+          i.fas.fa-map-marker-alt
+          .fc-content
+            label(for='where') Destination
+            input#where(type='text', placeholder='Where are you going?')
+        .fc-item
+          i.far.fa-calendar-alt
+          .fc-content
+            label(for='where') Check In - Out
+            input#where(type='text', placeholder='dd/mm/yyyy - dd/mm/yyyy')
+        .fc-item
+          i.fas.fa-users
+          .fc-content
+            label(for='where') Guests
+            input#where(type='text', placeholder='1 Adult - 0 Child')
+        .fc-item
+          i
+          .fc-content
+            label(for='where') Advance
+            input#where(type='text', placeholder='More')
+        button.fc-btn-search(type='submit') Search
+    .row.mt-4
+      .col-md-4
+        .feature-item
+          .title 20,000+ properties
+          .desc Morbi semper fames lobortis ac
+      .col-md-4
+        .feature-item
+          .title 20,000+ properties
+          .desc Morbi semper fames lobortis ac
+      .col-md-4
+        .feature-item
+          .title 20,000+ properties
+          .desc Morbi semper fames lobortis ac
+// Eng Search Page
+// Recommend Page
+.recommend.py-4
+  .container.my-4.py-4
+    h5.rp-title
+      | Recommended Homes
+    .rp-sub-title.mb-4
+      | Homes highly rated for thoughtful design
+    .row
+      .col-lg-4.mb-4
+        .rp-card-item.border
+          a.rp-card-image-box(href='#')
+            img.rp-card-image(src='https://remap.travelerwp.com/wp-content/uploads/2015/01/2019-03-25-21-02-41-721563-Jessica_Nash_PhotographyOne_Fine_Stay-scaled-740x560.jpg', width='100%')
+            .rp-card-cost
+              span.price $380,00
+              span.unit / 1 night(s)
+          .rp-card-body
+            a.rp-card-title(href='#')
+              | SPACIOUS 3 BEDROOMS
+            p.rp-card-sub Virginia, USA
+            .rp-card-rate
+              .rp-card-degree.mr-2
+                | 2.5/5 Average
+              i.far.fa-dot-circle.fa-xs
+              .rp-card-review.ml-2
+                | 10 Reviews
+            .line
+            .rp-card-ii
+              .rp-card-ii-item
+                i.fas.fa-user-friends.fa-lg
+                span 13
+              .rp-card-ii-item
+                i.fas.fa-bed.fa-lg
+                span 2
+              .rp-card-ii-item
+                i.fas.fa-sink.fa-lg
+                span 1
+              .rp-card-ii-item
+                i.far.fa-map.fa-lg
+                span
+                  | 100m
+                  sup 2
+      .col-lg-4.mb-4
+        .rp-card-item.border
+          a.rp-card-image-box(href='#')
+            img.rp-card-image(src='https://remap.travelerwp.com/wp-content/uploads/2015/01/CLL181_TAKE_01_5_of_21-scaled-740x560.jpg', width='100%')
+            .rp-card-cost
+              span.price $380,00
+              span.unit / 1 night(s)
+          .rp-card-body
+            a.rp-card-title(href='#')
+              | SPACIOUS 3 BEDROOMS
+            p.rp-card-sub Virginia, USA
+            .rp-card-rate
+              .rp-card-degree.mr-2
+                | 2.5/5 Average
+              i.far.fa-dot-circle.fa-xs
+              .rp-card-review.ml-2
+                | 10 Reviews
+            .line
+            .rp-card-ii
+              .rp-card-ii-item
+                i.fas.fa-user-friends.fa-lg
+                span 13
+              .rp-card-ii-item
+                i.fas.fa-bed.fa-lg
+                span 2
+              .rp-card-ii-item
+                i.fas.fa-sink.fa-lg
+                span 1
+              .rp-card-ii-item
+                i.far.fa-map.fa-lg
+                span
+                  | 100m
+                  sup 2
+      .col-lg-4.mb-4
+        .rp-card-item.border
+          a.rp-card-image-box(href='#')
+            img.rp-card-image(src='https://remap.travelerwp.com/wp-content/uploads/2015/01/2017-05-23-21-39-54-151723-LUB122_Stuyvesant_Place_TAKE01_5_of_17-scaled-740x560.jpg', width='100%')
+            .rp-card-cost
+              span.price $380,00
+              span.unit / 1 night(s)
+          .rp-card-body
+            a.rp-card-title(href='#')
+              | SPACIOUS 3 BEDROOMS
+            p.rp-card-sub Virginia, USA
+            .rp-card-rate
+              .rp-card-degree.mr-2
+                | 2.5/5 Average
+              i.far.fa-dot-circle.fa-xs
+              .rp-card-review.ml-2
+                | 10 Reviews
+            .line
+            .rp-card-ii
+              .rp-card-ii-item
+                i.fas.fa-user-friends.fa-lg
+                span 13
+              .rp-card-ii-item
+                i.fas.fa-bed.fa-lg
+                span 2
+              .rp-card-ii-item
+                i.fas.fa-sink.fa-lg
+                span 1
+              .rp-card-ii-item
+                i.far.fa-map.fa-lg
+                span
+                  | 100m
+                  sup 2
+// End Recommend Page
+// Find Type Page
+.find-type.py-4
+  .container.my-4.py-4
+    h5.rp-title
+      | Find a Home Type
+    .rp-sub-title.mb-4
+      | It is a long established fact that a reader
+    .row
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/apartment.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | Apartment
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/condo.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | Condo
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/duplex.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | Duplex House
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/house-outline.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | House
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/studio-lighting.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | Studio
+      .col.col-xs-6.col-sm-3.col-md-2
+        .ft-item
+          a.mb-4(href='#')
+            img(src='/static/images/village.svg', width='68px', height='68px')
+          span.ft-rental-name
+            | Townhouse
+// End Find Type Page
+// Top Destinations
+.top-destinatios
+  .container.my-4.py-4
+    h5.rp-title
+      | Top Destinations
+    .rp-sub-title.mb-4
+      | It is a long established fact that a reader
+    .row
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2018/12/photo-1494475673543-6a6a27143fc8-370x370.jpeg', width='100%', alt='')
+          a(href='#') CALIFORNIA
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2018/12/photo-1488805990569-3c9e1d76d51c-370x370.jpeg', width='100%', alt='')
+          a(href='#') NEVADA
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2018/12/photo-1505576391880-b3f9d713dc4f-370x370.jpeg', width='100%', alt='')
+          a(href='#') VIRGINIA
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2018/12/photo-1505577058444-a3dab90d4253-370x370.jpeg', width='100%', alt='')
+          a(href='#') LOS ANGELES
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2018/12/photo-1417721955552-a49ac2d334e8-370x370.jpeg', width='100%', alt='')
+          a(href='#') SAN FRANCISCO
+      .col-xs-12.col-sm-6.col-md-6.col-lg-4.mb-4
+        .td-item
+          img(src='https://remap.travelerwp.com/wp-content/uploads/2015/02/photo-1532323544230-7191fd51bc1b-370x370.jpeg', width='100%', alt='')
+          a(href='#') NEW JERSEY
+// End Top Destinations
+// Add Rental List
+.arl
+  .container
+    h1.arl-title
+      | Add Your Rental Listing
+    .arl-sub
+      | Homes highly rated for thoughtful design
+    a.btn.btn-arl-custom(href='#')
+      | Create Listing
+// End Add Rental List
+// Customer Comment
+.customer-comment
+  .container.my-4.pt-4
+    h2.text-center(style='margin-bottom: 60px;')
+      span(style='color: #1a2b48')
+        | Meet Some Happy Customers
+    .row.my-4
+      .col-xs-12.col-sm-6.col-md-4.col-lg-4.mb-4
+        .cc-item.d-flex.flex-column.align-items-center
+          .author.round-circle.mb-4
+            img(src='https://remap.travelerwp.com/wp-content/uploads/2019/04/Emmi-100x100.png', alt='')
+          p.cc-content.text-center
+            | Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.
+          p.cc-author-name
+            | Eva Hicks
+      .col-xs-12.col-sm-6.col-md-4.col-lg-4.mb-4
+        .cc-item.d-flex.flex-column.align-items-center
+          .author.round-circle.mb-4
+            img(src='https://remap.travelerwp.com/wp-content/uploads/2019/04/Jason-100x100.png', alt='')
+          p.cc-content.text-center
+            | Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.
+          p.cc-author-name
+            | Eva Hicks
+      .col-xs-12.col-sm-6.col-md-4.col-lg-4.mb-4
+        .cc-item.d-flex.flex-column.align-items-center
+          .author.round-circle.mb-4
+            img(src='https://remap.travelerwp.com/wp-content/uploads/2019/04/Jacqui-100x100.png', alt='')
+          p.cc-content.text-center
+            | Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.
+          p.cc-author-name
+            | Eva Hicks
+// End Customer Comment
+// Recent Email
+.recent-email
+  .container.my-4.pb-4(style='padding-top: 50px')
+    .row.d-flex.justify-content-center
+      .col-xs-12.col-md-5.col-lg-6.d-flex.justify-content-center.align-items-center
+        img(src='https://remap.travelerwp.com/wp-content/themes/traveler/v2/images/svg/ico_email_subscribe.svg', alt='')
+        .re-body.ml-4
+          h4 Get Updates &amp; More
+          p Thoughtful thoughts to your inbox
+      .col-xs-12.col-md-5.col-lg-6
+        form.form-inline(action='')
+          input.form-control.re-input(type='text')
+          button.btn.btn-primary.re-submit(type='submit') SUBCRIBE
+// Recent Email
+footer.container.py-4
+  p
+    | Copyright &copy; 2020 by 
+    a(href='#') Tay
+script(src='https://kit.fontawesome.com/17d9afb30b.js', crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')

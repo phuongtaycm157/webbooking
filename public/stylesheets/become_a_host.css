@@ -1,0 +1,49 @@
+
+.become-host-banner {
+	background-image: url(https://acmap.travelerwp.com/wp-content/uploads/2019/01/bg_parallax.jpg?id=8980);
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	padding: 150px 0;
+}
+.btn-orange {
+	background-color: #fa4c36;
+	color: white;
+	border: none;
+}
+.btn-orange:hover {
+	background-color: #fa4c36;
+	color: white;
+	border: none;
+}
+.host-title {
+	text-align: center;
+	margin-top: 45px;
+	margin-bottom: 35px;
+}
+.wrapper .wrapper-number {
+	text-align: center;
+	border: 2px solid #5191fa;
+	color: #5191fa;
+	font-size: 40px;
+	width: 83px;
+	transition: .2s;
+}
+.sub {
+	font-size: 13px;
+	font-weight: 400;
+	color: #1A2B48;
+}
+.wrapper:hover .wrapper-number {
+	box-shadow: 0 0 10px #5191fa99;
+}
+
+.expert {
+	padding: 50px;
+	height: 300px;
+	transition: .3s;
+	cursor: pointer;
+}
+.expert:hover {
+	box-shadow: 0 0 10px #5191fa99;
+}

@@ -1,0 +1,78 @@
+
+.single-content {
+	background-color: #fff;
+}
+
+.form-book-wrapper {
+	border: 1px solid #d7dce3;
+	border-radius: 0 0 4px 4px;
+	border-bottom: 4px solid #5191fa;
+}
+.form-book-wrapper .book-price {
+	color: #fff;
+	background-color: #5191fa;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 17px 20px;
+}
+.form-book-wrapper .form-title {
+	border-bottom: 1px solid #d7dce3;
+	background-color: #f9f9f9;
+}
+.form-book-wrapper .form-title div {
+	padding: 20px;
+	color: #5e6d77;
+	font-weight: 500;
+	cursor: pointer;
+}
+.form-book-wrapper .form-title .active {
+	color: #5191fa;
+	text-decoration: underline;
+}
+.form-book-wrapper .form-book-content .time-check {
+	text-align: center;
+	font-size: 14px;
+	color: #5e6d77;
+}
+.form-book-wrapper .form-book-content .number-guest div:first-child {
+	font-size: 14px;
+	color: #5e6d77;
+}
+.form-book-wrapper .form-book-content .more-option {
+	text-align: end;
+}
+.owner-info .media .media-right a {
+	font-size: 14px;
+	color: #1a2b48;
+}
+.owner-info .media .media-right div {
+	font-size: 12px;
+	color: #5e6d77;
+}
+
+.room-feature-items .item i {
+	color: #5191fa;
+}
+.room-feature-items .item span {
+	color: #5E6D77;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.room-description .description {
+	color: #5E6D77;
+	font-size: 14px;
+	font-weight: 400;
+} 
+
+.room-amenities .amenity-item span {
+	color: #5E6D77;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.note {
+	color: #5E6D77;
+	font-size: 14px;
+	font-weight: 400;
+}

@@ -1,0 +1,264 @@
+extends ../layout/host.layout.pug
+block content
+  nav.site-header.sticky-top.py-1
+    .container.d-flex.flex-column.flex-md-row.justify-content-between
+      a.py-2(href='#', aria-label='Product')
+        svg.d-block.mx-auto(xmlns='http://www.w3.org/2000/svg', width='24', height='24', fill='none', stroke='currentColor', stroke-linecap='round', stroke-linejoin='round', stroke-width='2', role='img', viewbox='0 0 24 24', focusable='false')
+          title Product
+          circle(cx='12', cy='12', r='10')
+          path(d='M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94')
+      a.py-2.d-none.d-md-inline-block(href='/host') Kh&aacute;ch s&#x1EA1;n
+      a.py-2.d-none.d-md-inline-block.active(href='/host/room') Ph&ograve;ng
+      a.py-2.d-none.d-md-inline-block(href='#') Gi&aacute; &amp; ti&#x1EC7;n &iacute;ch
+      a.py-2.d-none.d-md-inline-block(href='#') Khuy&#x1EBF;n m&#x1EA1;i
+      a.py-2.d-none.d-md-inline-block(href='#') Th&#x1ED1;ng k&ecirc;
+  
+  style.
+    .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    .active {
+    color: white !important;
+    }
+    .selection {
+    color: black;
+    padding: 10px 10px;
+    }
+    .selection:hover {
+    color: black;
+    text-decoration: none;
+    background-color: #eee;
+    }
+    .sl-active {
+    background-color: #eee;
+    color: #1174a6;
+    border-right: 2px solid #1174a6;
+    }
+    .lh-active,.loaihinh:hover {
+    background-color: #c3e7d9;
+    box-shadow: 0 0 4px #898989;
+    border: none !important;
+    transition: .3s;
+    cursor: pointer;
+    }
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+    }
+
+  .container-fluid.shadow-sm
+  .container
+    .room-item
+      .p-3.d-flex.align-items-center
+        .image.mr-2(style='width: 60px; height: 60px')
+          img.rounded(src='http://localhost:3000/static/images/hotel-1.jpg', style='width: 100%;height: 100%')
+        div
+          h5 [18507135] #{room.room_tenphong}
+          div
+            a.badge.badge-success.mr-2(href='#') &Dstrok;ang ho&#x1EA1;t &dstrok;&#x1ED9;ng
+            small #{hotel.hotel_province}, #{hotel.hotel_country}
+      .w-100.border-bottom
+      .px-2.d-flex
+        .px-3.py-2.border-right(style='font-weight: 600; color: #1174a6; border-bottom:3px solid #1174a6; ') S&#x1EED;a ch&#x1ED7; &#x1EDF;
+        a.px-3.py-2(href='#') L&#x1ECB;ch
+  
+  .container.mt-4
+    .row
+      .col-md-3
+        .card.card-body.px-0
+          h5.text-center.mb-3 Chi ti&#x1EBF;t ch&#x1ED5; ngh&#x1EC9;
+          .w-100.border-bottom
+          a.d-block.selection(href='/host/'+room.room_id+'/modify/baseinfo') Th&ocirc;ng tin c&#x1A1; b&#x1EA3;n
+          a.d-block.selection.sl-active(href='/host/'+room.room_id+'/modify/amenities') Ti&#x1EC7;n nghi
+          a.d-block.selection(href='#') &#x1EA2;nh
+      .col-md-9
+        h5.mb-2 Ti&ecirc;u chu&#x1EA9;n
+        small C&aacute;c ti&#x1EC7;n nghi n&agrave;y c&oacute; trong h&#x1EA7;u h&#x1EBF;t c&aacute;c ch&#x1ED7; ngh&#x1EC9; th&agrave;nh c&ocirc;ng c&#x1EE7;a ch&uacute;ng t&ocirc;i.
+        .mb-3
+        #tieuchuan.card.card-body.mb-4
+          .row
+            each tieuchuan in room.room_tieuchuan
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=tieuchuan[1])
+                  svg.bi.bi-check-square(style=tieuchuan[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=tieuchuan[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=tieuchuan[0]
+
+            
+            
+        h5.mb-2 L&#x1ED1;i v&agrave;o
+        small &Dstrok;&acirc;y l&agrave; nh&#x1EEF;ng c&aacute;ch kh&aacute;ch v&agrave;o ch&#x1ED7; ngh&#x1EC9;.
+        .mb-3
+        #loivao.card.card-body.mb-4
+          .row
+            each loivao in room.room_loivao
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=loivao[1])
+                  svg.bi.bi-check-square(style=loivao[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=loivao[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=loivao[0]
+
+
+
+
+            
+        h5.mb-2 B&#x1EBF;p
+        small
+          | Kh&aacute;ch th&#x1B0;&#x1EDD;ng &dstrok;&#x1EB7;t nh&agrave; v&igrave; c&oacute; b&#x1EBF;p, h&atilde;y &dstrok;&#x1EA3;m b&#x1EA3;o r&#x1EB1;ng qu&yacute; &dstrok;&#x1ED1;i t&aacute;c cho du kh&aacute;ch bi&#x1EBF;t n&ecirc;n mong &dstrok;&#x1EE3;i g&igrave; trong kh&ocirc;ng gian b&#x1EBF;p.
+        .mb-3
+        #bep.card.card-body.mb-4
+          .row
+            each bep in room.room_bep
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=bep[1])
+                  svg.bi.bi-check-square(style=bep[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=bep[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=bep[0]
+
+
+
+
+
+
+            
+        h5.mb-2 Ph&ograve;ng t&#x1EAF;m
+        small Cho kh&aacute;ch bi&#x1EBF;t (c&aacute;c) ph&ograve;ng t&#x1EAF;m c&oacute; &dstrok;&#x1EB7;c tr&#x1B0;ng g&igrave;.
+        .mb-3
+        #phongtam.card.card-body.mb-4
+          .row
+            each phongtam in room.room_phongtam
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=phongtam[1])
+                  svg.bi.bi-check-square(style=phongtam[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=phongtam[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=phongtam[0]
+
+
+
+
+
+            
+        h5.mb-2 Ngo&agrave;i tr&#x1EDD;i
+        small Cho du kh&aacute;ch th&#x1EA5;y nh&#x1EEF;ng lo&#x1EA1;i tr&#x1EA3;i nghi&#x1EC7;m ngo&agrave;i tr&#x1EDD;i m&agrave; h&#x1ECD; c&oacute; th&#x1EC3; mong &dstrok;&#x1EE3;i.
+        .mb-3
+        #ngoaitroi.card.card-body.mb-4
+          .row
+            each ngoaitroi in room.room_ngoaitroi
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=ngoaitroi[1])
+                  svg.bi.bi-check-square(style=ngoaitroi[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=ngoaitroi[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=ngoaitroi[0]
+
+
+
+
+            
+        h5.mb-2 Gi&#x1EA3;i tr&iacute;
+        small
+          | Kh&ocirc;ng ph&#x1EA3;i l&uacute;c n&agrave;o kh&aacute;ch c&utilde;ng mu&#x1ED1;n r&#x1EDD;i kh&#x1ECF;i ch&#x1ED7; ngh&#x1EC9;, c&aacute;c ti&#x1EC7;n nghi n&agrave;y cho ph&eacute;p h&#x1ECD; &#x1EDF; trong ch&#x1ED7; ngh&#x1EC9; v&agrave; th&#x1EA5;y vui.
+        .mb-3
+        #giaitri.card.card-body.mb-4
+          .row
+            each giaitri in room.room_giaitri
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=giaitri[1])
+                  svg.bi.bi-check-square(style=giaitri[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=giaitri[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=giaitri[0]
+
+
+
+            
+        h5.mb-2 Gia &dstrok;&igrave;nh
+        small
+          | C&aacute;c ti&#x1EC7;n nghi n&agrave;y quan tr&#x1ECD;ng &dstrok;&#x1ED1;i v&#x1EDB;i nh&#x1EEF;ng gia &dstrok;&igrave;nh &dstrok;i du l&#x1ECB;ch c&ugrave;ng nhau, &dstrok;&#x1EB7;c bi&#x1EC7;t l&agrave; v&#x1EDB;i tr&#x1EBB; nh&#x1ECF;.
+        .mb-3
+        #giadinh.card.card-body.mb-4
+          .row
+            each giadinh in room.room_giadinh
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=giadinh[1])
+                  svg.bi.bi-check-square(style=giadinh[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=giadinh[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=giadinh[0]
+
+
+
+
+
+            
+        h5.mb-2 &Dstrok;&#x1ED9; an to&agrave;n v&agrave; s&#x1EA1;ch s&#x1EBD;
+        small
+          | Cho kh&aacute;ch th&#x1EA5;y r&#x1EB1;ng qu&yacute; &dstrok;&#x1ED1;i t&aacute;c coi tr&#x1ECD;ng s&#x1EF1; an to&agrave;n v&agrave; s&#x1EE9;c kh&#x1ECF;e c&#x1EE7;a h&#x1ECD; v&#x1EDB;i c&aacute;c ti&#x1EC7;n nghi n&agrave;y.
+        .mb-3
+        #doantoanvasachse.card.card-body.mb-4
+          .row
+            each doantoanvasachse in room.room_doantoanvasachse
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=doantoanvasachse[1])
+                  svg.bi.bi-check-square(style=doantoanvasachse[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=doantoanvasachse[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=doantoanvasachse[0]
+
+
+
+
+
+
+            
+        h5.mb-2 Kh&aacute;c
+        small C&aacute;c d&#x1ECB;ch v&#x1EE5; kh&aacute;c m&agrave; c&oacute; th&#x1EC3; &dstrok;&aacute;p &#x1EE9;ng nhu c&#x1EA7;u c&#x1EE7;a du kh&aacute;ch nh&#x1EA5;t &dstrok;&#x1ECB;nh.
+        .mb-3
+        #khac.card.card-body.mb-4
+          .row
+            each khac in room.room_khac
+              .col-4.mb-2
+                .check(style='font-size: 16px; cursor: pointer;', data-state=khac[1])
+                  svg.bi.bi-check-square(style=khac[1]?'display: inline;':'display: none;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                    path(fill-rule='evenodd', d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z')
+                  svg.bi.bi-square(style=khac[1]?'display: none;':'display: inline;', width='1em', height='1em', viewbox='0 0 16 16', fill='currentColor', xmlns='http://www.w3.org/2000/svg')
+                    path(fill-rule='evenodd', d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z')
+                  small(class='ml-1')=khac[0]
+
+
+
+            
+        .mb-5.d-flex.justify-content-end
+          button.btn.btn-lg.btn-outline-primary(type='button', style='width: 200px') H&#x1EE7;y
+          .mr-2
+          button#luu.btn.btn-lg.btn-primary(type='button', style='width: 200px') L&#x1B0;u
+
+  script(src='/static/scripts/tiennghi.js', type='text/javascript')
+
