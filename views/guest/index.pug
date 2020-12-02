@@ -47,7 +47,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
       a.log__.in.px-2.border-right.border-secondary(href='#') Login
       a.log__.out.px-2(href='#') Sign Up
       a.px-4(href='#')
-        img(src='images/shopping-bag.svg', alt='cart', width='26px')
+        img(src='/static/images/shopping-bag.svg', alt='cart', width='26px')
       button.btn.btn-orange.mx-2.my-2.my-sm-0.px-4.py-2(type='submit') Become a Host
   // </div>
 // End Navigation
@@ -55,13 +55,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-white
 .search-result-page
   .container.search-result-page-content
     .srp-header.text-center Find your next rental
-    form
+    form(method='post', action='/guest/search')
       .from-search
         .fc-item.border-radius-left
           i.fas.fa-map-marker-alt
           .fc-content
             label(for='where') Destination
-            input#where(type='text', placeholder='Where are you going?')
+            input#where(type='text', name='findKeyWord', placeholder='Where are you going?')
         .fc-item
           i.far.fa-calendar-alt
           .fc-content
